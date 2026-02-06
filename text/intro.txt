@@ -1,0 +1,4 @@
+Hi, I'm Toby Brown.
+I’m an astronomer at the Herzberg Astronomy and Astrophysics Research Centre in Victoria, BC. My research investigates the interstellar medium, star formation, and environmental mechanisms, and how they relate to the formation and evolution of galaxies.
+I specialize in analyzing very large multi-wavelength datasets from some of the world's most advanced telescopes. On the technical side, I guide the development of cutting-edge digital infrastructure for astronomy, with the goal of making making fundamental research more efficient and accessible for all.
+If you are a prospective student or postdoc excited about these topics, I encourage you to get in touch—I’d love to hear from you!

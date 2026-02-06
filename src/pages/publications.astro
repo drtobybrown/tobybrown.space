@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationList from '../components/PublicationList.astro';
+---
+
+<BaseLayout
+  title="Publications | Dr. Toby Brown"
+  description="Publications by Dr. Toby Brown on galaxy evolution, star formation, the interstellar medium, VERTICO, MAUVE, and related astrophysics."
+>
+  <div class="page">
+    <div class="container">
+      <article>
+        <h1>Publications</h1>
+        <p class="lead">
+          <a href="https://ui.adsabs.harvard.edu/public-libraries/PmZuzC2WT_iteZZLF1guPw" target="_blank" rel="noopener noreferrer">View full library on ADS</a>
+        </p>
+        <PublicationList />
+      </article>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    padding: var(--space-12) 0;
+  }
+  .lead {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 0 0 var(--space-8);
+  }
+  .publication-list, .publications-placeholder {
+    max-width: var(--max-width);
+  }
+</style>

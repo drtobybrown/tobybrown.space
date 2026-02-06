@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Opportunities | Dr. Toby Brown"
+  description="Graduate student and postdoctoral opportunities with Dr. Toby Brown at Herzberg and the University of Victoria. Plaskett, Covington, Instrument Science, and NRC fellowships."
+>
+  <div class="opportunities">
+    <div class="container">
+      <h1>Opportunities</h1>
+      <p class="lead">Prospective students and postdocs</p>
+
+      <figure class="hero-image">
+        <img src="/images/haa.jpg" alt="Herzberg Astronomy and Astrophysics Research Centre" width="600" height="340" loading="eager" />
+        <figcaption>Herzberg Astronomy and Astrophysics Research Centre</figcaption>
+      </figure>
+
+      <div class="facilities">
+        <span class="facility">SKA</span>
+        <span class="facility">VLT/MUSE</span>
+        <span class="facility">ALMA</span>
+        <span class="facility">CANFAR</span>
+        <span class="facility">HST</span>
+        <span class="facility">LOFAR</span>
+        <span class="facility">MeerKAT</span>
+        <span class="facility">Rubin</span>
+      </div>
+
+      <p class="intro">
+        At the Herzberg Astronomy and Astrophysics Research Centre, we conduct world-class research across a broad range of astrophysics. We have access to current and future premier facilities like SKA, CHORD, ALMA, Rubin Observatory, Gemini Observatory, Canada France Hawaii Telescope, and state-of-the-art labs. I am also part of the Canadian Astronomy Data Centre at Herzberg which provides world-leading data services and cloud computing.
+      </p>
+
+      <div class="opportunities-grid">
+        <section class="card">
+          <h2>Graduate Students</h2>
+          <p>My research regularly generates opportunities and projects for graduate students as well as a chance to collaborate with leading astronomers around the world. If you're a prospective graduate student interested in related research areas, I strongly encourage you to apply to the <a href="https://www.uvic.ca/science/physics/graduate/astronomy/index.php" target="_blank" rel="noopener noreferrer">University of Victoria's Astronomy program</a>. I hold adjunct status at UVic and regularly supervise and collaborate with UVic students.</p>
+        </section>
+
+        <section class="card">
+          <h2>Postdoctoral Researchers</h2>
+          <p>We offer four regular postdoctoral fellowship programs at Herzberg:</p>
+          <ul>
+            <li>Plaskett Fellowship</li>
+            <li>Covington Fellowship</li>
+            <li>Instrument Science Fellowship</li>
+            <li>NRC annual open postdoctoral program</li>
+          </ul>
+          <p>For postdoctoral researchers who share the interests above, I'm always open to discussing fellowship proposals, and I recommend considering the postdoctoral positions at Herzberg and NRC.</p>
+        </section>
+      </div>
+
+      <div class="cta">
+        <a href="/contact/">Contact me</a> to discuss opportunities—I'd love to hear from you.
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .opportunities {
+    padding: var(--space-12) 0;
+  }
+  .opportunities h1 {
+    margin-bottom: var(--space-2);
+  }
+  .lead {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 0 0 var(--space-8);
+  }
+  .hero-image {
+    margin: 0 0 var(--space-8);
+  }
+  .hero-image img {
+    max-width: 480px;
+    border-radius: 4px;
+  }
+  .hero-image figcaption {
+    margin-top: var(--space-2);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  .facilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+  }
+  .facility {
+    font-size: 0.8rem;
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text-muted);
+  }
+  .intro {
+    margin-bottom: var(--space-12);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .opportunities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+  @media (max-width: 768px) {
+    .opportunities-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .card {
+    padding: var(--space-6);
+    background: var(--color-bg-soft);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+  }
+  .card h2 {
+    margin: 0 0 var(--space-4);
+    font-size: 1.1rem;
+  }
+  .card p {
+    margin: 0 0 var(--space-4);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .card ul {
+    margin: 0 0 var(--space-4);
+    padding-left: var(--space-6);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .cta {
+    margin-top: var(--space-12);
+    padding: var(--space-6);
+    background: var(--color-bg-soft);
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+    font-size: 0.95rem;
+  }
+</style>

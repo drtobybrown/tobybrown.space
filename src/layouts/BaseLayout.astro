@@ -1,0 +1,68 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ThemeScript from '../components/ThemeScript.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Dr. Toby Brown — Astronomer at the Herzberg Astronomy and Astrophysics Research Centre (HAA), National Research Council of Canada. Research in galaxy evolution, star formation, and the interstellar medium." } = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Toby Brown",
+  "jobTitle": "Astronomer",
+  "affiliation": [
+    {
+      "@type": "Organization",
+      "name": "Herzberg Astronomy and Astrophysics Research Centre (HAA), National Research Council of Canada (NRC)"
+    },
+    {
+      "@type": "Organization",
+      "name": "University of Victoria",
+      "description": "Adjunct"
+    }
+  ],
+  "knowsAbout": ["galaxy evolution", "star formation", "interstellar medium", "astrophysics"],
+  "url": "https://tobybrown.space"
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tobybrown.space" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style is:global>
+  @import '../styles/global.css';
+    </style>
+    <slot name="head" />
+    <ThemeScript />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

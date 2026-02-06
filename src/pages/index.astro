@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Dr. Toby Brown | Astronomer | Herzberg Astronomy"
+  description="Dr. Toby Brown is an astronomer at the Herzberg Astronomy and Astrophysics Research Centre (HAA), National Research Council of Canada, and adjunct at the University of Victoria. Research in the interstellar medium, star formation, and galaxy evolution."
+>
+  <div class="home">
+    <div class="container">
+      <div class="intro prose">
+        <div class="intro-header">
+          <img src="/images/headshot.jpg" alt="Toby Brown" class="headshot" width="120" height="120" />
+          <div>
+            <h1>I'm <strong>Toby Brown</strong></h1>
+            <p class="role">Astronomer · Herzberg Astronomy and Astrophysics Research Centre (HAA), NRC · Adjunct, University of Victoria</p>
+          </div>
+        </div>
+        <p>
+          My research investigates the interstellar medium, star formation, and environmental mechanisms, and how they relate to the formation and evolution of galaxies. I specialize in analyzing very large multi-wavelength datasets from the world's most advanced telescopes, and I guide the development of cutting-edge digital infrastructure for astronomy.
+        </p>
+        <p>
+          If you're a prospective student or postdoc excited about these topics, I encourage you to <a href="/opportunities/">explore opportunities</a> and <a href="/contact/">get in touch</a>.
+        </p>
+        <p class="links">
+          <a href="https://ui.adsabs.harvard.edu/public-libraries/PmZuzC2WT_iteZZLF1guPw" target="_blank" rel="noopener noreferrer">ADS Publications</a>
+          <span class="sep">·</span>
+          <a href="/contact/">Contact</a>
+          <span class="sep">·</span>
+          <a href="/research/">Current research</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .home {
+    padding: var(--space-16) 0;
+  }
+  .intro-header {
+    display: flex;
+    gap: var(--space-6);
+    align-items: flex-start;
+    margin-bottom: var(--space-8);
+  }
+  .headshot {
+    width: 120px;
+    height: 120px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .intro h1 {
+    margin: 0 0 var(--space-2);
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .role {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .intro p {
+    margin-bottom: var(--space-6);
+  }
+  .links {
+    margin-top: var(--space-8) !important;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+  .links a {
+    color: var(--color-accent);
+  }
+  .sep {
+    margin: 0 var(--space-2);
+    opacity: 0.5;
+  }
+  @media (max-width: 640px) {
+    .intro-header {
+      flex-direction: column;
+    }
+  }
+</style>

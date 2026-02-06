@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Current research | Dr. Toby Brown"
+  description="Dr. Toby Brown's research on galaxy evolution, star formation, environmental regulation, dwarf galaxies, VERTICO, MAUVE, and SKA infrastructure."
+>
+  <div class="research">
+    <div class="container">
+      <h1>Current research</h1>
+      <figure class="hero-image">
+        <img src="/images/vertico.jpg" alt="The VERTICO view of star forming gas in the Virgo Cluster" width="600" height="300" loading="eager" />
+        <figcaption>The VERTICO view of star forming gas in the Virgo Cluster</figcaption>
+      </figure>
+
+      <p class="intro">
+        I investigate how galaxies form, evolve, and cease forming stars—"quenching"—using observations from ALMA, MUSE, HST, LOFAR, and ASKAP. As we prepare for the SKA era, my work focuses on two scientific frontiers plus digital infrastructure.
+      </p>
+
+      <div class="research-grid">
+        <section class="card">
+          <h2>Environmental Regulation of Star Formation</h2>
+          <p>How dense environments reshape the interstellar medium. I co-lead <strong>MAUVE</strong> and lead <strong>VERTICO</strong>—using MUSE and ALMA to trace ram-pressure stripping and quantify how external pressures and stellar feedback regulate star formation down to ~50–100 parsec scales.</p>
+          <figure class="card-image">
+            <img src="/images/mauve_dr2.jpeg" alt="MAUVE view of the Virgo galaxies" width="500" height="280" loading="lazy" />
+            <figcaption>MAUVE view of stars and ionized gas in the Virgo galaxies</figcaption>
+          </figure>
+        </section>
+
+        <section class="card">
+          <h2>Evolution and Feedback in Dwarf Galaxies</h2>
+          <p>Building a framework to understand how low-mass systems sustain or suppress star formation. Combining UNIONS, LSST, LOFAR, and WALLABY data to characterize the interplay between star formation, cosmic rays, and AGN activity.</p>
+        </section>
+
+        <section class="card">
+          <h2>Digital Infrastructure & CANFAR</h2>
+          <p>At the Canadian Astronomy Data Centre, I guide the CANFAR Science Platform and lead the <strong>SKA Regional Centre Network (SRCNet)</strong>—designing the distributed network to support SKA science. The Canadian SKA Regional Centre will require infrastructure two orders of magnitude more powerful than current Canadian capacity.</p>
+          <figure class="card-image">
+            <img src="/images/cansrc.png" alt="Canadian SKA Regional Centre" width="500" height="280" loading="lazy" />
+            <figcaption>Canadian SKA Regional Centre infrastructure</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <p class="outro">My group bridges observational astrophysics and advanced data science to handle the exabyte-scale challenges of the next decade.</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .research {
+    padding: var(--space-12) 0;
+  }
+  .research h1 {
+    margin-bottom: var(--space-6);
+  }
+  .hero-image {
+    margin: 0 0 var(--space-12);
+  }
+  .hero-image img {
+    max-width: 480px;
+    border-radius: 4px;
+  }
+  .hero-image figcaption {
+    margin-top: var(--space-2);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  .intro {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-12);
+    max-width: 52ch;
+  }
+  .research-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+  .card {
+    padding: var(--space-8);
+    background: var(--color-bg-soft);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+  }
+  .card h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+    font-size: 1.1rem;
+  }
+  .card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .card-image {
+    margin: var(--space-6) 0 0;
+  }
+  .card-image img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  .card-image figcaption {
+    margin-top: var(--space-2);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  .outro {
+    margin-top: var(--space-12);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+</style>

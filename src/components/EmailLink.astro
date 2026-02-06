@@ -1,0 +1,58 @@
+---
+interface Props {
+  label?: string;
+  variant?: 'link' | 'button';
+}
+
+const { label = "Email me", variant = "link" } = Astro.props;
+// Base64-encoded email for bot protection - decoded by JS on click
+const emailB64 = Buffer.from("Tobias.Brown@nrc-cnrc.gc.ca").toString("base64");
+---
+
+<span
+  class:list={[variant === 'button' ? 'email-button' : 'email-link']}
+  data-e={emailB64}
+  role="button"
+  tabindex="0"
+  aria-label="Email Tobias Brown at NRC"
+>
+  {label}
+</span>
+
+<script>
+  document.querySelectorAll('[data-e]').forEach((el) => {
+    const openMailto = () => {
+      try {
+        const b64 = el.getAttribute('data-e');
+        if (b64) {
+          const email = atob(b64);
+          window.location.href = 'mailto:' + email;
+        }
+      } catch (_) {}
+    };
+    el.addEventListener('click', openMailto);
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openMailto();
+      }
+    });
+  });
+</script>
+
+<style>
+  .email-link, .email-button {
+    color: var(--color-accent);
+    cursor: pointer;
+  }
+  .email-link:hover, .email-button:hover {
+    text-decoration: underline;
+  }
+  .email-button {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    border: 2px solid var(--color-accent);
+    border-radius: 4px;
+    font-weight: 500;
+  }
+</style>

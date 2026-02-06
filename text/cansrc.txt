@@ -1,0 +1,3 @@
+At the Candian Astronomy Data Centre, I guide the development of the CANFAR Science Platform.
+I am the Lead Project Scientist for the Square Kilometre Array Regional Centre Network (SRCNet), a massive international effort to design, develop and operate a distributed interoperable network of regional centres to support the science exploitation of the SKA data. 
+I am also a scientist in the Canadian SKA Regional Centre, working to provide Canadian and international users with access to the SKA data. The establishment of this centre requires computing, network and storage infrastructure services two orders of magnitude more powerful than those currently existing in Canada.

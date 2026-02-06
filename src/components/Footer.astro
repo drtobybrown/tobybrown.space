@@ -1,0 +1,70 @@
+---
+import EmailLink from './EmailLink.astro';
+---
+
+<footer class="footer">
+  <button class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark">
+    <span aria-hidden="true">◐</span>
+  </button>
+  <div class="container">
+    <div class="footer-content">
+      <p class="affiliation">
+        Herzberg Astronomy and Astrophysics Research Centre (HAA), National Research Council of Canada (NRC) · Adjunct, University of Victoria
+      </p>
+      <p class="links">
+        <EmailLink label="Email" /> · <a href="/contact/">Contact</a> · <a href="/publications/">Publications</a>
+      </p>
+      <p class="copyright">© {new Date().getFullYear()} Toby Brown</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    margin-top: var(--space-16);
+    padding: var(--space-12) 0;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    position: relative;
+  }
+  .footer-content {
+    max-width: var(--max-width);
+  }
+  .affiliation {
+    margin: 0 0 var(--space-4);
+    line-height: 1.5;
+  }
+  .links {
+    margin: 0 0 var(--space-2);
+  }
+  .copyright {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  .theme-toggle {
+    position: absolute;
+    top: var(--space-6);
+    right: var(--space-6);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    padding: var(--space-2);
+  }
+  .theme-toggle:hover {
+    color: var(--color-accent);
+  }
+</style>
+
+<script>
+  document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>

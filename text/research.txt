@@ -1,0 +1,11 @@
+Current Research
+My research investigates how galaxies form, evolve, and eventually cease forming stars—a process known as "quenching". By combining observations from a global suite of premier observatories—including ALMA, MUSE, HST, LOFAR, and ASKAP—my program probes the physical mechanisms driving galaxy evolution across a wide range of cosmic environments.
+As we prepare for the Square Kilometre Array (SKA) era, my work focuses on two primary scientific frontiers:
+
+1. Environmental Regulation of Star Formation
+We investigate how dense environments, such as galaxy clusters, reshape the interstellar medium (ISM). Leveraging my leadership of international surveys like VERTICO and MAUVE, we use high-resolution molecular gas maps to trace environmental forces like ram-pressure stripping. Our goal is to quantify how these external pressures and internal stellar feedback jointly regulate star formation efficiency down to the scale of individual molecular clouds (~50–100 parsecs). I co-lead the MAUVE (Multi-wavelength Astrophysics to unveil the Virgo Environment) program, a combination of large surveys using the MUSE instrument on the Very Large Telescope and the Atacama Large Millimeter/ Array (ALMA) . This project uses this data from world's most advanced telescopes to understand the influence of the environment on the gas-star formation cycle of cluster galaxies during their infall.
+
+2. Evolution and Feedback in Dwarf Galaxies
+Dwarf galaxies are the most numerous galaxies in the universe, yet they remain one of the least understood. We are building a statistically robust framework to understand how these low-mass systems sustain or suppress star formation. By synergetically combining deep optical data from UNIONS and LSST with radio detections from LOFAR and WALLABY, we are characterizing the interplay between star formation, cosmic rays, and active galactic nuclei (AGN) activity in the low-mass regime.
+
+To solve the complex problems of galaxy evolution, my group utilizes cutting-edge computational methods. We bridge the gap between observational astrophysics and advanced data science to handle the exabyte-scale challenges of the next decade.

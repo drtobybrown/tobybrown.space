@@ -1,0 +1,70 @@
+---
+interface Publication {
+  bibcode: string;
+  title: string;
+  author?: string[];
+  year?: string;
+  journal?: string;
+}
+
+let publications: Publication[] = [];
+try {
+  const data = await import('../data/publications.json');
+  publications = data.default || [];
+} catch {
+  publications = [];
+}
+---
+
+{publications.length > 0 ? (
+  <ul class="publication-list">
+    {publications.map((pub) => (
+      <li class="publication-item">
+        <a href={`https://ui.adsabs.harvard.edu/abs/${pub.bibcode}/abstract`} target="_blank" rel="noopener noreferrer">
+          {pub.title}
+        </a>
+        {pub.author && pub.author.length > 0 && (
+          <span class="authors">{pub.author.slice(0, 5).join(', ')}{pub.author.length > 5 ? ` et al.` : ''}</span>
+        )}
+        {pub.year && <span class="year">{pub.year}</span>}
+        {pub.journal && <span class="journal">{pub.journal}</span>}
+      </li>
+    ))}
+  </ul>
+) : (
+  <div class="publications-placeholder">
+    <p>Publications are loaded from my <a href="https://ui.adsabs.harvard.edu/public-libraries/PmZuzC2WT_iteZZLF1guPw" target="_blank" rel="noopener noreferrer">ADS library</a>. Check back soon or view the full list on ADS.</p>
+  </div>
+)}
+
+<style>
+  .publication-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .publication-item {
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .publication-item:last-child {
+    border-bottom: none;
+  }
+  .publication-item a {
+    font-weight: 500;
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+  .authors, .year, .journal {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+  .publications-placeholder {
+    padding: var(--space-8);
+    background: var(--color-bg-soft);
+    border-radius: 4px;
+  }
+</style>

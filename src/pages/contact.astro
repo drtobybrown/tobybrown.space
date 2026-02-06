@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmailLink from '../components/EmailLink.astro';
+---
+
+<BaseLayout
+  title="Contact | Dr. Toby Brown"
+  description="Contact Dr. Toby Brown at the Herzberg Astronomy and Astrophysics Research Centre. Email and institutional links."
+>
+  <div class="page">
+    <div class="container">
+      <article class="prose">
+        <h1>Contact</h1>
+        <p>
+          I'm always happy to hear from prospective students, postdocs, and collaborators.
+        </p>
+        <div class="contact-details">
+          <p><strong>Email</strong> · <EmailLink label="Email me" variant="link" /></p>
+          <p><strong>Affiliation</strong> · Herzberg Astronomy and Astrophysics Research Centre (HAA), National Research Council of Canada (NRC), Victoria, BC</p>
+          <p><strong>Adjunct</strong> · University of Victoria</p>
+          <p>
+            <a href="https://ui.adsabs.harvard.edu/public-libraries/PmZuzC2WT_iteZZLF1guPw" target="_blank" rel="noopener noreferrer">Papers on ADS</a>
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    padding: var(--space-12) 0;
+  }
+  .contact-details p {
+    margin-bottom: var(--space-4);
+  }
+</style>

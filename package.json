@@ -1,0 +1,16 @@
+{
+  "name": "tobybrown.space",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "fetch-ads": "node scripts/fetch-ads.js"
+  },
+  "dependencies": {
+    "astro": "^5.17.1",
+    "@astrojs/sitemap": "^3.2.2"
+  }
+}

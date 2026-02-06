@@ -1,0 +1,124 @@
+---
+const navItems = [
+  { href: "/", label: "About me" },
+  { href: "/research/", label: "Current research" },
+  { href: "/publications/", label: "Publications" },
+  { href: "/opportunities/", label: "Opportunities" },
+  { href: "/contact/", label: "Contact" },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo">Toby Brown</a>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      <ul id="nav-menu" class="nav-list">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={["nav-link", { active: currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href)) }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('#nav-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('open');
+    });
+  }
+</script>
+
+<style>
+  .header {
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+  .logo:hover {
+    text-decoration: none;
+    color: var(--color-accent);
+  }
+  .nav-list {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+  .nav-link {
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: var(--color-text);
+  }
+  .nav-link.active {
+    font-weight: 600;
+  }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+  }
+  .hamburger {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--color-text);
+    position: relative;
+  }
+  .hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: var(--color-text);
+  }
+  .hamburger::before { top: -6px; }
+  .hamburger::after { top: 6px; }
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .nav-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--color-bg);
+      padding: var(--space-6);
+      gap: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav-list.open { display: flex; }
+  }
+</style>

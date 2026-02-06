@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description = "Dr. Toby Brown — Astronomer at the Herzberg Astronomy and Astrophysics Research Centre (HAA), National Research Council of Canada. Research in galaxy evolution, star formation, and the interstellar medium." } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -35,8 +36,9 @@ const jsonLd = {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/avif" href={`${base}favicon.avif`} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" href={`${base}favicon.ico`} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />

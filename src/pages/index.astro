@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -10,7 +11,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="intro prose">
         <div class="intro-header">
-          <img src="/images/headshot.jpg" alt="Toby Brown" class="headshot" width="120" height="120" />
+          <img src={`${base}images/headshot.jpg`} alt="Toby Brown" class="headshot" width="120" height="120" />
           <div>
             <h1>I'm <strong>Toby Brown</strong></h1>
             <p class="role">Astronomer · Herzberg Astronomy and Astrophysics Research Centre (HAA), NRC · Adjunct, University of Victoria</p>
@@ -20,14 +21,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           My research investigates the interstellar medium, star formation, and environmental mechanisms, and how they relate to the formation and evolution of galaxies. I specialize in analyzing very large multi-wavelength datasets from the world's most advanced telescopes, and I guide the development of cutting-edge digital infrastructure for astronomy.
         </p>
         <p>
-          If you're a prospective student or postdoc excited about these topics, I encourage you to <a href="/opportunities/">explore opportunities</a> and <a href="/contact/">get in touch</a>.
+          If you're a prospective student or postdoc excited about these topics, I encourage you to <a href={`${base}opportunities/`}>explore opportunities</a> and <a href={`${base}contact/`}>get in touch</a>.
         </p>
         <p class="links">
           <a href="https://ui.adsabs.harvard.edu/public-libraries/PmZuzC2WT_iteZZLF1guPw" target="_blank" rel="noopener noreferrer">ADS Publications</a>
           <span class="sep">·</span>
-          <a href="/contact/">Contact</a>
+          <a href={`${base}contact/`}>Contact</a>
           <span class="sep">·</span>
-          <a href="/research/">Current research</a>
+          <a href={`${base}research/`}>Current research</a>
         </p>
       </div>
     </div>

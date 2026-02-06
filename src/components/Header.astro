@@ -1,17 +1,18 @@
 ---
+const base = import.meta.env.BASE_URL;
 const navItems = [
-  { href: "/", label: "About me" },
-  { href: "/research/", label: "Current research" },
-  { href: "/publications/", label: "Publications" },
-  { href: "/opportunities/", label: "Opportunities" },
-  { href: "/contact/", label: "Contact" },
+  { href: base, label: "About me" },
+  { href: base + "research/", label: "Current research" },
+  { href: base + "publications/", label: "Publications" },
+  { href: base + "opportunities/", label: "Opportunities" },
+  { href: base + "contact/", label: "Contact" },
 ];
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="header">
   <div class="container header-inner">
-    <a href="/" class="logo">Toby Brown</a>
+    <a href={base} class="logo">Toby Brown</a>
     <nav class="nav" aria-label="Main navigation">
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
         <span class="hamburger"></span>
@@ -21,7 +22,7 @@ const currentPath = Astro.url.pathname;
           <li>
             <a
               href={item.href}
-              class:list={["nav-link", { active: currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href)) }]}
+              class:list={["nav-link", { active: currentPath === item.href || (item.href !== base && currentPath.startsWith(item.href)) }]}
             >
               {item.label}
             </a>
@@ -46,6 +47,8 @@ const currentPath = Astro.url.pathname;
 
 <style>
   .header {
+    position: relative;
+    z-index: 100;
     padding: var(--space-6) 0;
     border-bottom: 1px solid var(--color-border);
   }
@@ -87,6 +90,10 @@ const currentPath = Astro.url.pathname;
     border: none;
     cursor: pointer;
     padding: var(--space-2);
+    min-width: 44px;
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
   .hamburger {
     display: block;
@@ -106,7 +113,7 @@ const currentPath = Astro.url.pathname;
   .hamburger::before { top: -6px; }
   .hamburger::after { top: 6px; }
   @media (max-width: 768px) {
-    .nav-toggle { display: block; }
+    .nav-toggle { display: flex; align-items: center; justify-content: center; }
     .nav-list {
       display: none;
       position: absolute;
@@ -118,6 +125,7 @@ const currentPath = Astro.url.pathname;
       padding: var(--space-6);
       gap: var(--space-4);
       border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     }
     .nav-list.open { display: flex; }
   }

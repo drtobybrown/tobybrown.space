@@ -1,5 +1,6 @@
 ---
 import EmailLink from './EmailLink.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="footer">
@@ -12,7 +13,7 @@ import EmailLink from './EmailLink.astro';
         Herzberg Astronomy and Astrophysics Research Centre (HAA), National Research Council of Canada (NRC) · Adjunct, University of Victoria
       </p>
       <p class="links">
-        <EmailLink label="Email" /> · <a href="/contact/">Contact</a> · <a href="/publications/">Publications</a>
+        <EmailLink label="Email" /> · <a href={`${base}contact/`}>Contact</a> · <a href={`${base}publications/`}>Publications</a>
       </p>
       <p class="copyright">© {new Date().getFullYear()} Toby Brown</p>
     </div>

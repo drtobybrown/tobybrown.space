@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -12,7 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="lead">Prospective students and postdocs</p>
 
       <figure class="hero-image">
-        <img src="/images/haa.jpg" alt="Herzberg Astronomy and Astrophysics Research Centre" width="600" height="340" loading="eager" />
+        <img src={`${base}images/haa.jpg`} alt="Herzberg Astronomy and Astrophysics Research Centre" width="600" height="340" loading="eager" />
         <figcaption>Herzberg Astronomy and Astrophysics Research Centre</figcaption>
       </figure>
 
@@ -51,7 +52,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="cta">
-        <a href="/contact/">Contact me</a> to discuss opportunities—I'd love to hear from you.
+        <a href={`${base}contact/`}>Contact me</a> to discuss opportunities—I'd love to hear from you.
       </div>
     </div>
   </div>
